@@ -1,5 +1,5 @@
 - name: add 'chris-lea' PPA for Node.js
-  apt_repository: repo=ppa:chris-lea/node.js
+  apt_repository: repo=ppa:chris-lea/node.js-legacy
   register: result
 
 - name: apt-get update
@@ -10,5 +10,5 @@
   apt: pkg=nodejs state=latest
 
 # 'npm' is bundled with 'nodejs' apt package starting from version 0.10.0
-# - name: install 'npm'
-#   apt: pkg=npm state=latest
+- name: install 'npm'
+  apt: pkg=npm state=latest
